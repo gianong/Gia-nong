@@ -3,80 +3,1047 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gia Nông</title>
+<meta name="description" content="CÔNG TY TNHH XNK BVTV GIA NÔNG - Vật tư nông nghiệp, thuốc bảo vệ thực vật, phân bón.">
+<title>GIA NÔNG | Vật tư nông nghiệp</title>
+
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,sans-serif;background:#f5f7f2;color:#222}
-header{background:#1f7a3f;color:white;padding:22px 16px;text-align:center}
-header h1{font-size:32px}
-header p{margin-top:6px}
-nav{background:white;padding:12px;text-align:center;box-shadow:0 2px 8px #ccc}
-nav a{margin:0 10px;color:#1f7a3f;text-decoration:none;font-weight:bold}
-.hero{padding:55px 20px;text-align:center;background:#e3f2df}
-.hero h2{font-size:30px;color:#17652f;margin-bottom:12px}
-.hero p{font-size:18px}
-.button{display:inline-block;margin-top:22px;background:#1f7a3f;color:white;padding:13px 25px;border-radius:8px;text-decoration:none}
-section{padding:35px 20px;max-width:1000px;margin:auto}
-section h2{text-align:center;color:#1f7a3f;margin-bottom:25px}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-.card{background:white;padding:25px;border-radius:12px;text-align:center;box-shadow:0 2px 10px #ddd}
-.card h3{color:#1f7a3f;margin-bottom:10px}
-footer{background:#185b31;color:white;text-align:center;padding:25px;margin-top:20px}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f5f7f3;
+  color:#17351b;
+  line-height:1.6;
+}
+
+a{
+  text-decoration:none;
+}
+
+.container{
+  width:min(1180px,92%);
+  margin:auto;
+}
+
+/* ===== HEADER ===== */
+
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:#08752f;
+  box-shadow:0 3px 15px rgba(0,0,0,.18);
+}
+
+.header-inner{
+  min-height:72px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.logo{
+  color:white;
+  font-size:27px;
+  font-weight:900;
+  letter-spacing:.5px;
+}
+
+.logo span{
+  color:#ffd21c;
+}
+
+nav{
+  display:flex;
+  align-items:center;
+  gap:25px;
+}
+
+nav a{
+  color:white;
+  font-weight:700;
+  font-size:15px;
+}
+
+nav a:hover{
+  color:#ffd21c;
+}
+
+/* ===== HERO / PANO ===== */
+
+.hero{
+  min-height:560px;
+  position:relative;
+  overflow:hidden;
+
+  background:
+    linear-gradient(90deg,
+      rgba(0,66,28,.93) 0%,
+      rgba(0,85,30,.72) 42%,
+      rgba(0,0,0,.08) 100%
+    ),
+    linear-gradient(135deg,#0b7d35,#75b52d 45%,#e7b928);
+}
+
+.hero:before{
+  content:"";
+  position:absolute;
+  width:650px;
+  height:650px;
+  right:-130px;
+  bottom:-270px;
+  border-radius:50%;
+  background:rgba(255,255,255,.12);
+}
+
+.hero:after{
+  content:"";
+  position:absolute;
+  width:360px;
+  height:360px;
+  right:12%;
+  top:50px;
+  border-radius:50%;
+  background:rgba(255,255,255,.08);
+}
+
+.hero-inner{
+  min-height:560px;
+  display:flex;
+  align-items:center;
+  position:relative;
+  z-index:2;
+}
+
+.hero-text{
+  width:60%;
+  color:white;
+}
+
+.hero-small{
+  font-size:18px;
+  font-weight:700;
+  margin-bottom:8px;
+  letter-spacing:1px;
+}
+
+.hero h1{
+  font-size:58px;
+  line-height:1.05;
+  margin-bottom:20px;
+  font-weight:900;
+}
+
+.hero h1 span{
+  color:#ffd21c;
+}
+
+.hero p{
+  font-size:20px;
+  max-width:620px;
+  margin-bottom:28px;
+}
+
+.buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:13px 24px;
+  border-radius:8px;
+  font-weight:800;
+  transition:.2s;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+.btn-yellow{
+  background:#ffd21c;
+  color:#14371c;
+}
+
+.btn-blue{
+  background:#138be8;
+  color:white;
+}
+
+.hero-plant{
+  position:absolute;
+  right:4%;
+  bottom:0;
+  width:38%;
+  height:72%;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+}
+
+.plant-card{
+  width:390px;
+  height:330px;
+  border-radius:50% 50% 8% 8%;
+  background:
+    radial-gradient(circle at 30% 65%,#e93422 0 6%,transparent 7%),
+    radial-gradient(circle at 60% 52%,#f04426 0 7%,transparent 8%),
+    radial-gradient(circle at 43% 32%,#e53220 0 6%,transparent 7%),
+    radial-gradient(circle at 72% 72%,#ef3c22 0 6%,transparent 7%),
+    linear-gradient(120deg,#166d25,#56a52b 55%,#1e7426);
+  box-shadow:0 20px 50px rgba(0,0,0,.22);
+}
+
+/* ===== SECTION ===== */
+
+section{
+  padding:70px 0;
+}
+
+.section-title{
+  text-align:center;
+  color:#08752f;
+  font-size:34px;
+  margin-bottom:12px;
+  font-weight:900;
+}
+
+.section-subtitle{
+  text-align:center;
+  color:#667067;
+  max-width:700px;
+  margin:0 auto 35px;
+}
+
+/* ===== COMPANY ===== */
+
+.company-box{
+  background:white;
+  border-radius:18px;
+  padding:35px;
+  box-shadow:0 8px 30px rgba(0,0,0,.07);
+  text-align:center;
+  border-top:5px solid #08752f;
+}
+
+.company-box h3{
+  font-size:25px;
+  color:#08752f;
+  margin-bottom:8px;
+}
+
+.company-box p{
+  color:#555;
+}
+
+/* ===== CATEGORIES ===== */
+
+.category-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+
+.category{
+  background:white;
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow:0 7px 25px rgba(0,0,0,.08);
+  transition:.25s;
+}
+
+.category:hover{
+  transform:translateY(-7px);
+}
+
+.category-image{
+  height:190px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  overflow:hidden;
+}
+
+.category-image:before{
+  content:"";
+  position:absolute;
+  width:150px;
+  height:150px;
+  border-radius:50%;
+  background:rgba(255,255,255,.18);
+}
+
+.category-image span{
+  position:relative;
+  z-index:2;
+  color:white;
+  font-size:28px;
+  font-weight:900;
+  text-align:center;
+  text-shadow:0 3px 10px rgba(0,0,0,.4);
+}
+
+.disease{
+  background:linear-gradient(135deg,#1b7831,#7fb83a);
+}
+
+.insect{
+  background:linear-gradient(135deg,#176b35,#b69d26);
+}
+
+.fertilizer{
+  background:linear-gradient(135deg,#08752f,#3aa84d);
+}
+
+.leaf{
+  background:linear-gradient(135deg,#0a6d44,#7caf28);
+}
+
+.category-content{
+  padding:20px;
+  text-align:center;
+}
+
+.category-content h3{
+  color:#08752f;
+  margin-bottom:5px;
+}
+
+.category-content p{
+  color:#777;
+  font-size:14px;
+}
+
+/* ===== PRODUCTS ===== */
+
+.product-section{
+  background:#eef4ec;
+}
+
+.product-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+
+.product{
+  background:white;
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow:0 6px 24px rgba(0,0,0,.07);
+  transition:.25s;
+}
+
+.product:hover{
+  transform:translateY(-5px);
+}
+
+.product-image{
+  height:235px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  position:relative;
+  background:
+    radial-gradient(circle at 50% 40%,#ffffff 0 28%,transparent 29%),
+    linear-gradient(135deg,#e5f0e4,#c5dfbf);
+}
+
+.bottle{
+  width:95px;
+  height:155px;
+  border-radius:12px 12px 18px 18px;
+  background:linear-gradient(90deg,#167532,#58a936,#146a2b);
+  box-shadow:0 10px 20px rgba(0,0,0,.2);
+  position:relative;
+}
+
+.bottle:before{
+  content:"";
+  position:absolute;
+  width:46px;
+  height:28px;
+  left:24px;
+  top:-25px;
+  border-radius:5px 5px 2px 2px;
+  background:#173c1d;
+}
+
+.bottle:after{
+  content:"GIA NÔNG";
+  position:absolute;
+  left:9px;
+  right:9px;
+  top:57px;
+  background:#fff;
+  color:#08752f;
+  text-align:center;
+  font-size:10px;
+  font-weight:900;
+  padding:9px 2px;
+  border-radius:4px;
+}
+
+.product-info{
+  padding:18px;
+}
+
+.product-info h3{
+  color:#08752f;
+  margin-bottom:5px;
+}
+
+.product-info p{
+  color:#777;
+  font-size:14px;
+}
+
+/* ===== WHY ===== */
+
+.why-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.why{
+  background:white;
+  padding:28px;
+  border-radius:16px;
+  text-align:center;
+  box-shadow:0 6px 22px rgba(0,0,0,.06);
+}
+
+.icon{
+  width:62px;
+  height:62px;
+  border-radius:50%;
+  background:#e4f3e5;
+  color:#08752f;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:28px;
+  margin:0 auto 15px;
+}
+
+.why h3{
+  color:#08752f;
+  margin-bottom:7px;
+}
+
+.why p{
+  color:#666;
+  font-size:14px;
+}
+
+/* ===== CONTACT ===== */
+
+.contact{
+  background:
+    linear-gradient(135deg,#075d27,#08752f 55%,#3b982d);
+  color:white;
+}
+
+.contact .section-title{
+  color:white;
+}
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:25px;
+}
+
+.contact-card{
+  background:rgba(255,255,255,.1);
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:16px;
+  padding:28px;
+}
+
+.contact-card h3{
+  color:#ffd21c;
+  margin-bottom:15px;
+}
+
+.contact-card p{
+  margin:9px 0;
+}
+
+.contact-card a{
+  color:white;
+  font-weight:700;
+}
+
+.big-phone{
+  font-size:30px;
+  color:#ffd21c !important;
+}
+
+/* ===== FOOTER ===== */
+
+footer{
+  background:#064820;
+  color:white;
+  text-align:center;
+  padding:25px 15px;
+}
+
+footer strong{
+  color:#ffd21c;
+}
+
+/* ===== MOBILE ===== */
+
+@media(max-width:900px){
+
+  .hero-text{
+    width:100%;
+  }
+
+  .hero-plant{
+    display:none;
+  }
+
+  .hero h1{
+    font-size:46px;
+  }
+
+  .category-grid,
+  .product-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .why-grid{
+    grid-template-columns:1fr;
+  }
+
+  .contact-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:600px){
+
+  .header-inner{
+    min-height:65px;
+    flex-direction:column;
+    padding:12px 0;
+  }
+
+  nav{
+    gap:12px;
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
+  nav a{
+    font-size:13px;
+  }
+
+  .hero,
+  .hero-inner{
+    min-height:500px;
+  }
+
+  .hero h1{
+    font-size:38px;
+  }
+
+  .hero p{
+    font-size:17px;
+  }
+
+  .category-grid,
+  .product-grid{
+    grid-template-columns:1fr;
+  }
+
+  .section-title{
+    font-size:28px;
+  }
+
+  section{
+    padding:50px 0;
+  }
+
+  .company-box{
+    padding:25px 18px;
+  }
+}
 </style>
 </head>
 
 <body>
 
+<!-- ================= HEADER ================= -->
+
 <header>
-<h1>🌱 GIA NÔNG</h1>
-<p>Đồng hành cùng nhà nông</p>
+  <div class="container header-inner">
+
+    <div class="logo">
+      GIA <span>NÔNG</span>
+    </div>
+
+    <nav>
+      <a href="#gioi-thieu">Giới thiệu</a>
+      <a href="#nhom-san-pham">Sản phẩm</a>
+      <a href="#noi-bat">Nổi bật</a>
+      <a href="#lien-he">Liên hệ</a>
+    </nav>
+
+  </div>
 </header>
 
-<nav>
-<a href="#home">Trang chủ</a>
-<a href="#products">Sản phẩm</a>
-<a href="#contact">Liên hệ</a>
-</nav>
 
-<div class="hero" id="home">
-<h2>Giải pháp nông nghiệp hiệu quả</h2>
-<p>Gia Nông cung cấp sản phẩm và giải pháp chăm sóc cây trồng.</p>
-<a class="button" href="#products">Xem sản phẩm</a>
-</div>
+<!-- ================= PANO ================= -->
 
-<section id="products">
-<h2>Sản phẩm & dịch vụ</h2>
+<section class="hero">
 
-<div class="cards">
-<div class="card">
-<h3>🌱 Phân bón</h3>
-<p>Dinh dưỡng giúp cây trồng phát triển khỏe mạnh.</p>
-</div>
+  <div class="container hero-inner">
 
-<div class="card">
-<h3>🪴 Thuốc BVTV</h3>
-<p>Giải pháp bảo vệ cây trồng hiệu quả.</p>
-</div>
+    <div class="hero-text">
 
-<div class="card">
-<h3>🍃 Tư vấn kỹ thuật</h3>
-<p>Tư vấn chăm sóc và xử lý bệnh cây trồng.</p>
-</div>
-</div>
+      <div class="hero-small">
+        CÔNG TY TNHH XNK BVTV GIA NÔNG
+      </div>
+
+      <h1>
+        GIẢI PHÁP<br>
+        <span>CHO MÙA VỤ</span>
+      </h1>
+
+      <p>
+        Đồng hành cùng nhà nông trong chăm sóc,
+        bảo vệ và nâng cao hiệu quả cây trồng.
+      </p>
+
+      <div class="buttons">
+
+        <a class="btn btn-yellow"
+           href="tel:0889008009">
+          ☎ GỌI NGAY
+        </a>
+
+        <a class="btn btn-blue"
+           href="https://zalo.me/0889008009"
+           target="_blank">
+          ZALO
+        </a>
+
+      </div>
+
+    </div>
+
+    <div class="hero-plant">
+      <div class="plant-card"></div>
+    </div>
+
+  </div>
+
 </section>
 
-<section id="contact">
-<h2>Liên hệ Gia Nông</h2>
-<div class="card">
-<p>📞 Điện thoại: Đang cập nhật</p>
-<p>📍 Địa chỉ: Đang cập nhật</p>
-<p>📧 Email: Đang cập nhật</p>
-</div>
+
+<!-- ================= GIỚI THIỆU ================= -->
+
+<section id="gioi-thieu">
+
+  <div class="container">
+
+    <h2 class="section-title">
+      VỀ GIA NÔNG
+    </h2>
+
+    <p class="section-subtitle">
+      Cung cấp giải pháp và sản phẩm phục vụ sản xuất
+      nông nghiệp.
+    </p>
+
+    <div class="company-box">
+
+      <h3>
+        CÔNG TY TNHH XNK BVTV GIA NÔNG
+      </h3>
+
+      <p>
+        <strong>Mã số thuế:</strong>
+        580158159
+      </p>
+
+      <p>
+        Chuyên cung cấp thuốc bảo vệ thực vật,
+        phân bón và các sản phẩm phục vụ chăm sóc
+        cây trồng.
+      </p>
+
+    </div>
+
+  </div>
+
 </section>
+
+
+<!-- ================= NHÓM SẢN PHẨM ================= -->
+
+<section id="nhom-san-pham">
+
+  <div class="container">
+
+    <h2 class="section-title">
+      NHÓM SẢN PHẨM
+    </h2>
+
+    <p class="section-subtitle">
+      Các nhóm sản phẩm phục vụ nhu cầu chăm sóc
+      và bảo vệ cây trồng.
+    </p>
+
+    <div class="category-grid">
+
+      <div class="category">
+
+        <div class="category-image disease">
+          <span>THUỐC<br>BỆNH</span>
+        </div>
+
+        <div class="category-content">
+          <h3>Thuốc bệnh</h3>
+          <p>
+            Sản phẩm hỗ trợ quản lý bệnh trên cây trồng.
+          </p>
+        </div>
+
+      </div>
+
+
+      <div class="category">
+
+        <div class="category-image insect">
+          <span>THUỐC<br>SÂU</span>
+        </div>
+
+        <div class="category-content">
+          <h3>Thuốc sâu</h3>
+          <p>
+            Sản phẩm hỗ trợ quản lý sâu hại cây trồng.
+          </p>
+        </div>
+
+      </div>
+
+
+      <div class="category">
+
+        <div class="category-image fertilizer">
+          <span>PHÂN<br>BÓN</span>
+        </div>
+
+        <div class="category-content">
+          <h3>Phân bón</h3>
+          <p>
+            Dinh dưỡng cho cây theo từng giai đoạn.
+          </p>
+        </div>
+
+      </div>
+
+
+      <div class="category">
+
+        <div class="category-image leaf">
+          <span>PHÂN BÓN<br>LÁ</span>
+        </div>
+
+        <div class="category-content">
+          <h3>Phân bón lá</h3>
+          <p>
+            Bổ sung dinh dưỡng cho cây qua lá.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= SẢN PHẨM NỔI BẬT ================= -->
+
+<section class="product-section" id="noi-bat">
+
+  <div class="container">
+
+    <h2 class="section-title">
+      SẢN PHẨM NỔI BẬT
+    </h2>
+
+    <p class="section-subtitle">
+      Khu vực giới thiệu sản phẩm của Gia Nông.
+    </p>
+
+    <div class="product-grid">
+
+      <div class="product">
+
+        <div class="product-image">
+          <div class="bottle"></div>
+        </div>
+
+        <div class="product-info">
+          <h3>Thuốc bệnh</h3>
+          <p>
+            Thông tin sản phẩm sẽ được cập nhật.
+          </p>
+        </div>
+
+      </div>
+
+
+      <div class="product">
+
+        <div class="product-image">
+          <div class="bottle"></div>
+        </div>
+
+        <div class="product-info">
+          <h3>Thuốc sâu</h3>
+          <p>
+            Thông tin sản phẩm sẽ được cập nhật.
+          </p>
+        </div>
+
+      </div>
+
+
+      <div class="product">
+
+        <div class="product-image">
+          <div class="bottle"></div>
+        </div>
+
+        <div class="product-info">
+          <h3>Phân bón</h3>
+          <p>
+            Thông tin sản phẩm sẽ được cập nhật.
+          </p>
+        </div>
+
+      </div>
+
+
+      <div class="product">
+
+        <div class="product-image">
+          <div class="bottle"></div>
+        </div>
+
+        <div class="product-info">
+          <h3>Phân bón lá</h3>
+          <p>
+            Thông tin sản phẩm sẽ được cập nhật.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= LÝ DO ================= -->
+
+<section>
+
+  <div class="container">
+
+    <h2 class="section-title">
+      GIA NÔNG ĐỒNG HÀNH CÙNG NHÀ NÔNG
+    </h2>
+
+    <p class="section-subtitle">
+      Tập trung vào sản phẩm và giải pháp phù hợp
+      với nhu cầu sản xuất.
+    </p>
+
+    <div class="why-grid">
+
+      <div class="why">
+
+        <div class="icon">🌱</div>
+
+        <h3>
+          Cây trồng khỏe
+        </h3>
+
+        <p>
+          Hướng đến giải pháp chăm sóc cây trồng
+          hiệu quả.
+        </p>
+
+      </div>
+
+
+      <div class="why">
+
+        <div class="icon">🧪</div>
+
+        <h3>
+          Đa dạng sản phẩm
+        </h3>
+
+        <p>
+          Thuốc bệnh, thuốc sâu, phân bón và
+          phân bón lá.
+        </p>
+
+      </div>
+
+
+      <div class="why">
+
+        <div class="icon">🤝</div>
+
+        <h3>
+          Đồng hành nhà nông
+        </h3>
+
+        <p>
+          Cung cấp thông tin và sản phẩm phục vụ
+          sản xuất nông nghiệp.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= LIÊN HỆ ================= -->
+
+<section class="contact" id="lien-he">
+
+  <div class="container">
+
+    <h2 class="section-title">
+      LIÊN HỆ GIA NÔNG
+    </h2>
+
+    <p class="section-subtitle" style="color:#e7eee8">
+      Liên hệ để được tư vấn và biết thêm thông tin
+      về sản phẩm.
+    </p>
+
+
+    <div class="contact-grid">
+
+      <div class="contact-card">
+
+        <h3>
+          THÔNG TIN CÔNG TY
+        </h3>
+
+        <p>
+          <strong>
+            CÔNG TY TNHH XNK BVTV GIA NÔNG
+          </strong>
+        </p>
+
+        <p>
+          📍 163 Lạc Long Quân,
+          xã Đức Trọng, tỉnh Lâm Đồng
+        </p>
+
+        <p>
+          MST: 580158159
+        </p>
+
+      </div>
+
+
+      <div class="contact-card">
+
+        <h3>
+          LIÊN HỆ
+        </h3>
+
+        <p>
+          ☎ Điện thoại:
+        </p>
+
+        <a class="big-phone"
+           href="tel:0889008009">
+          0889 008 009
+        </a>
+
+        <p>
+          ✉ Email:
+        </p>
+
+        <a href="mailto:xnkbvtvgianong@gmail.com">
+          xnkbvtvgianong@gmail.com
+        </a>
+
+        <br><br>
+
+        <a class="btn btn-blue"
+           href="https://zalo.me/0889008009"
+           target="_blank">
+          Nhắn tin Zalo
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
 
 <footer>
-<p>© 2026 Gia Nông - Đồng hành cùng nhà nông</p>
+
+  <strong>
+    CÔNG TY TNHH XNK BVTV GIA NÔNG
+  </strong>
+
+  <br>
+
+  163 Lạc Long Quân,
+  xã Đức Trọng, tỉnh Lâm Đồng
+
+  <br>
+
+  © 2026 Gia Nông. All rights reserved.
+
 </footer>
+
 
 </body>
 </html>
